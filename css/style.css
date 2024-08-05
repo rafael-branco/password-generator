@@ -1,0 +1,63 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: #121417;
+}
+
+*{
+    font-family: "Manrope";
+    color: white;
+}
+
+.title-box{
+    margin-bottom: 40px;
+
+}
+
+.title-box p{
+    color: #9EABB8;
+}
+
+.password-box, .length-box{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.password-box label, .length-box label{
+    margin-bottom: 10px;
+}
+
+.password-box input, .length-box input{
+    border: 2px solid #3D4754;
+    background-color: #1C2126;
+    border-radius: 12px;
+    height: 32px;
+    width: 100%;
+    max-width: 448px;
+
+}
+
+.character-inclusions button{
+    background-color: #293038;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+}
+
+.generate-new-password-box button{
+    background-color: #293038;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 12px;
+    margin-top: 30px;
+    font-weight: bold;
+
+}
+
+body{
+    padding: 100px 20px;
+}
