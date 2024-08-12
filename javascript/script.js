@@ -51,6 +51,17 @@ function toggleSelection(button) {
 
 }
 
+function shuffleString(str) {
+
+    let arr = str.split('');
+    
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.join('');
+}
+
 function generatePassword() {
 
     let selectedCharacters = "";
@@ -93,23 +104,25 @@ function generatePassword() {
         });
     });
 
+    let initialPassword = '';
+
     passwordSetup.configurations.forEach(config => {
         if (config.is_active) {
             selectedCharacters += config.setup;
+            initialPassword += getRandomCharacter(config.setup);
         }
     });
 
     let passwordLength = parseInt(document.getElementById('password-length').value);
 
     let password = "";
-    for (let i = 0; i < passwordLength; i++) {
+    for (let i = 0; i < passwordLength - initialPassword.length; i++) {
         password += getRandomCharacter(selectedCharacters);
         
     }
 
+    password = initialPassword + password;
+    password = shuffleString(password);
+    
     document.getElementById('password').setAttribute('value', password)
-}
-
-function clipboardSuccess(){
-
 }
